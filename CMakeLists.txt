@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.21)
+include($ENV{PICO_SDK_PATH}/external/pico_sdk_import.cmake)
+project(shizukuRTOS C CXX ASM)
+pico_sdk_init()
+add_subdirectory(src)
+add_subdirectory(test)

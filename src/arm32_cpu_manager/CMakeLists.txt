@@ -1,0 +1,7 @@
+add_library(shizukuRTOS_arm32_cpu_manager)
+target_sources(shizukuRTOS_arm32_cpu_manager PRIVATE context_manager.c process_manager.c)
+target_include_directories(shizukuRTOS_arm32_cpu_manager PRIVATE headers)
+target_include_directories(shizukuRTOS_arm32_cpu_manager INTERFACE interface)
+target_link_libraries(shizukuRTOS_arm32_cpu_manager fatalError)
+set(current_dir ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_options(shizukuRTOS_arm32_cpu_manager PUBLIC "LINKER:--script=${current_dir}/arm32_cpu_manager.ld")

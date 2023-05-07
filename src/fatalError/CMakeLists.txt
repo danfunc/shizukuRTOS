@@ -1,0 +1,6 @@
+add_library(fatalError)
+target_sources(fatalError PRIVATE fatalError.c)
+target_include_directories(fatalError PUBLIC include)
+target_link_libraries(fatalError pico_stdlib)
+pico_enable_stdio_usb(fatalError 1)
+pico_enable_stdio_uart(fatalError 1)

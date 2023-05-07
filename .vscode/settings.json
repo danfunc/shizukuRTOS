@@ -1,0 +1,10 @@
+{
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+    "files.associations": {
+        "stdint.h": "c",
+        "processes.h": "c",
+        "setjmp.h": "c",
+        "stdlib.h": "c",
+        "context.h": "c"
+    }
+}
