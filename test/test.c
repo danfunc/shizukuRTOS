@@ -5,20 +5,23 @@
 #include "stdio.h"
 #include "stdlib.h"
 
-shizuku_RTOS_context test;
+void testProcess() {
+  void *sp;
+
+  while (1) {
+
+    asm("mov %0, sp" : "=r"(sp));
+    printf("sp:%p", sp);
+    shizuku_RTOS_contextSwich();
+  }
+}
 int main() {
   stdio_init_all();
   sleep_ms(2000);
+  new_process(testProcess, 0, 0);
 
   while (1) {
-    if (saveContext(&test, 1) == 0) {
-      sleep_ms(100);
-      printf("changing\n");
-      loadContext(&test);
-    } else {
-      sleep_ms(100);
-      printf("failed\n");
-    }
+    shizuku_RTOS_contextSwich();
   }
 
   return 0;

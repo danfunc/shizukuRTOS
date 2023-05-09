@@ -8,6 +8,8 @@ typedef struct shizuku_RTOS_process {
   struct shizuku_RTOS_process *before;
   struct shizuku_RTOS_process *after;
   shizuku_RTOS_context context;
+  void *stack_space;
+
 } shizuku_RTOS_process;
 
 static char shizuku_RTOS_System_Stack[SHIZUKU_RTOS_SYSTEM_STACK_SIZE];
