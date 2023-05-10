@@ -2,7 +2,6 @@
 #include "shizukuRTOS/fatalError.h"
 #include "stdio.h"
 #include "stdlib.h"
-#include "stdnoreturn.h"
 
 char __attribute__((section(".shizuku_RTOS_root_system_stack_section")))
 rootSystemProcess_Stack[1024];
@@ -14,9 +13,10 @@ shizuku_RTOS_process rootSystemProcess = {
     .context = {.lr = shizuku_RTOS_System,
                 .sp = &__shizuku_RTOS_root_system_stack_section_end__,
                 0}};
+
 shizuku_RTOS_process *currentProcess = &rootSystemProcess;
 
-void noreturn shizuku_RTOS_System() {
+void shizuku_RTOS_System() {
   while (1) {
     printf("systemCalled");
     shizuku_RTOS_contextSwich();
@@ -63,10 +63,16 @@ void new_process(void (*entrypoint)(int, char **), int argc, char *argv[]) {
   }
 }
 void shizuku_RTOS_contextSwich() {
-  if (saveContext(&(currentProcess->context), 1) == 0) {
-    currentProcess = currentProcess->after;
-    loadContext(&(currentProcess->context));
+  void *sp;
+  asm("mov %0, sp" : "=r"(sp));
+  if (sp < currentProcess->stack_space) {
+    if (saveContext(&(currentProcess->context), 1) == 0) {
+      currentProcess = currentProcess->after;
+      loadContext(&(currentProcess->context));
+    } else {
+      return;
+    }
   } else {
-    return;
+    fatalError("stackOverFlowed");
   }
 }
