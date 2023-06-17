@@ -1,2 +1,0 @@
-add_subdirectory(arm32_cpu_manager)
-add_subdirectory(fatalError)
