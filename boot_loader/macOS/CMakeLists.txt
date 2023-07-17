@@ -1,0 +1,2 @@
+add_executable(shizukuRTOS main.c)
+target_link_libraries(shizukuRTOS shizuku_kernel)

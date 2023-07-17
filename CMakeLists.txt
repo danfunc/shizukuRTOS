@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.26)
+project(shizuku C CXX ASM)
+add_subdirectory(configs)
+add_subdirectory(shizuku_kernel)
+add_subdirectory(boot_loader)

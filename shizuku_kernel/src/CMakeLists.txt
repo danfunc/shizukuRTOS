@@ -1,0 +1,3 @@
+target_sources(shizuku_kernel PRIVATE process.cpp)
+target_include_directories(shizuku_kernel PRIVATE include)
+add_subdirectory(kprintf)

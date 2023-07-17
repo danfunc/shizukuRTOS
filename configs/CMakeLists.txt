@@ -1,0 +1,8 @@
+set(SHIZUKU_ARCH unknown CACHE STRING arch_name)
+set(SHIZUKU_PLATFORM unknown CACHE STRING plathome_name)
+if(${SHIZUKU_PLATFORM} STREQUAL unknown)
+message(FATAL_ERROR "SHIZUKU_PLATFORM not found!")
+endif()
+if(${SHIZUKU_ARCH} STREQUAL unknown)
+message(FATAL_ERROR "SHIZUKU_ARCH not found!")
+endif()
