@@ -1,9 +1,10 @@
 [
     {
-        "name": "mycompilerkit",
-        "compilers": {
-            "C": "/usr/local/bin/arm-none-eabi-gcc",
-            "CXX": "/usr/local/bin/arm-none-eabi-g++"
-        }
+        "name": "X86_64-EFI",
+        "toolchainFile": "${workspaceFolder}/toolchains/X64-EFI.cmake"
+    },
+    {
+        "name": "X86_64-macOS",
+        "toolchainFile": "${workspaceFolder}/toolchains/X64-macOS.cmake"
     }
 ]

@@ -1,0 +1,1 @@
+include(${SHIZUKU_ARCH}.cmake)
