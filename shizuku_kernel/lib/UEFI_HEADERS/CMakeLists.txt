@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.27)
+project(UEFI_HEADERS C CXX)
+add_library(${PROJECT_NAME} INTERFACE)
+target_include_directories(${PROJECT_NAME} INTERFACE interface)
+if(${CMAKE_SYSTEM_PROCESSOR} STREQUAL x86_64)
+  target_include_directories(${PROJECT_NAME} INTERFACE interface/X64)
+endif(${CMAKE_SYSTEM_PROCESSOR} STREQUAL x86_64)

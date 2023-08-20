@@ -6,5 +6,6 @@
         "setjmp.h": "c",
         "stdlib.h": "c",
         "context.h": "c"
-    }
+    },
+    "C_Cpp.errorSquiggles": "enabled"
 }

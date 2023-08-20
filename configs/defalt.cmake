@@ -1,0 +1,1 @@
+set(shizuku_context_manager ${CMAKE_SYSTEM_PROCESSOR})
