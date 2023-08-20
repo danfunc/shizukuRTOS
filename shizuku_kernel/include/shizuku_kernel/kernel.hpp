@@ -1,5 +1,0 @@
-
-class kernel {
-private:
-public:
-};

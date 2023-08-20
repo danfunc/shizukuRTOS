@@ -1,2 +1,3 @@
 include(defalt.cmake)
-add_subdirectory(shizuku_kernel)
+add_subdirectory(shizuku_config)
+target_link_libraries(shizuku_kernel PUBLIC shizuku_config)

@@ -1,0 +1,6 @@
+project(shizuku_config CXX)
+add_library(${PROJECT_NAME} INTERFACE)
+target_include_directories(${PROJECT_NAME} INTERFACE interface)
+target_compile_definitions(${PROJECT_NAME} INTERFACE USE_SHIZUKU_CONFIG_CMAKE=1)
+target_compile_definitions(${PROJECT_NAME} INTERFACE CMAKE_SYSTEM_PROCESSOR=${CMAKE_SYSTEM_PROCESSOR})
+target_compile_definitions(${PROJECT_NAME} INTERFACE shizuku_context_manager=${shizuku_context_manager})
