@@ -1,1 +1,1 @@
-set(shizuku_context_manager ${CMAKE_SYSTEM_PROCESSOR})
+set(shizuku_context_manager ${SHIZUKU_SYSTEM_PROCESSOR})

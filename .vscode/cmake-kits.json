@@ -6,5 +6,9 @@
     {
         "name": "X86_64-macOS",
         "toolchainFile": "${workspaceFolder}/toolchains/X64-macOS.cmake"
+    },
+    {
+        "name": "raspberry-Pi-pico-Pico_SDK",
+        "toolchainFile": "${workspaceFolder}/toolchains/rasberry-Pi-pico-Pico_SDK.cmake"
     }
 ]

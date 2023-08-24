@@ -1,1 +1,1 @@
-add_subdirectory(${CMAKE_SYSTEM_PROCESSOR})
+add_subdirectory(${SHIZUKU_SYSTEM_PROCESSOR})
