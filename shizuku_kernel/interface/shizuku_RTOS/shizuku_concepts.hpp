@@ -1,3 +1,7 @@
-template <typename shizuku_kernel, typename shizuku_context_manager,
-          typename shizuku_memory_manager>
-concept shizuku_kernel = requires(shizuku_kernel_type kernel) {}
+template <typename T>
+concept contextable = requires { typename T::resiters; };
+template <typename T, typename U>
+concept context_switcher = requires(T context_switcher, U context) {
+  requires contextable<U>;
+  context_switcher.change_context(context);
+};

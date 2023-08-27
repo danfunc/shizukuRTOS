@@ -1,1 +1,2 @@
 add_subdirectory(context_switch)
+target_sources(shizuku_kernel PRIVATE typecheck.cpp)
