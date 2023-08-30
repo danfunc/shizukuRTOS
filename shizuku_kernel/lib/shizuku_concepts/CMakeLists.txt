@@ -1,0 +1,3 @@
+project(shizuku_concepts CXX)
+add_library(shizuku_concepts INTERFACE)
+target_include_directories(shizuku_concepts INTERFACE interface)
