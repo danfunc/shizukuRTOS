@@ -1,0 +1,2 @@
+target_sources(shizuku_kernel PRIVATE contextswitch.cpp cpu_manager.cpp)
+target_include_directories(shizuku_kernel PUBLIC include)
