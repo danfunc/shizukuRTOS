@@ -12,5 +12,5 @@ template <typename T, typename U>
 inline constexpr bool same_type_value = IsSame<T, U>::value;
 template <typename T, typename U>
 concept same_type = same_type_value<T, U>;
-} // namespace shizuku_RTOS
+}; // namespace shizuku_RTOS
 #endif

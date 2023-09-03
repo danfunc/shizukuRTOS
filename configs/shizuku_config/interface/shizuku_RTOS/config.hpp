@@ -1,8 +1,8 @@
 #ifndef SHIZUKU_CONFIG
 #define SHIZUKU_CONFIG
-class SHIZUKU_SYSTEM_PROCESSOR;
-using contextmanager = SHIZUKU_SYSTEM_PROCESSOR;
+#include "shizuku_RTOS/cpu_manager.hpp"
 namespace shizuku_RTOS {
-    using shizuku_system_processor = SHIZUKU_SYSTEM_PROCESSOR;
+    using shizuku_system_processor = type::cpu_manager::SHIZUKU_SYSTEM_PROCESSOR;
+    using cpu_manager = shizuku_system_processor;
 };
 #endif

@@ -1,6 +1,6 @@
-#include "shizuku_kernel/kernel_entry.h"
+#include "shizuku_RTOS/shizuku_boot.h"
 #include <stdio.h>
 int main(int argc, char const *argv[]) {
-  start_kernel();
+  shizuku_kernel_boot();
   return 0;
 }

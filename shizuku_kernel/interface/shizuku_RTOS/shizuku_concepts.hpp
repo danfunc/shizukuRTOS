@@ -3,7 +3,6 @@
 #include "same_type.hpp"
 namespace shizuku_RTOS
 {
-
     namespace concepts
     {
         template <typename T>
@@ -15,7 +14,6 @@ namespace shizuku_RTOS
             cpu_manager_concept<typename T::cpu_manager>;
         };
     } // namespace concepts
-    
 } // namespace shizuku_RTOS
 
 #endif

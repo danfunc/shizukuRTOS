@@ -1,4 +1,4 @@
-if(${SHIZUKU_PLATFORM_NAME} STREQUAL UEFI)
+if(${SHIZUKU_PLATFORM_NAME} STREQUAL "UEFI")
 add_subdirectory(UEFI_HEADERS)
 target_link_libraries(shizuku_kernel PUBLIC UEFI_HEADERS)
 endif()

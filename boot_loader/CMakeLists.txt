@@ -1,2 +1,5 @@
 add_executable(shizuku_boot_loader)
 add_subdirectory(${SHIZUKU_PLATFORM_NAME})
+if(${SHIZUKU_PLATFORM_NAME} STREQUAL pico_sdk)
+pico_add_extra_outputs(shizuku_boot_loader)
+endif()

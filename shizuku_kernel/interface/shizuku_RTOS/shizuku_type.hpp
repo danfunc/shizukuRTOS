@@ -10,7 +10,7 @@ namespace shizuku_RTOS
         private:
         public:
             T cpu_manager = T();
-            kernel() {};
+            kernel(){};
             ~kernel(){};
         };
     }

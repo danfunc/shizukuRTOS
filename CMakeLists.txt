@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 3.26)
 project(shizuku C CXX ASM)
+if(${SHIZUKU_PLATFORM_NAME} STREQUAL pico_sdk)
+pico_sdk_init()
+endif(${SHIZUKU_PLATFORM_NAME} STREQUAL pico_sdk)
 add_subdirectory(shizuku_kernel)
 add_subdirectory(boot_loader)
 add_subdirectory(configs)

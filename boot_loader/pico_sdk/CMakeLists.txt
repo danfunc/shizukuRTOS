@@ -1,0 +1,2 @@
+target_sources(shizuku_boot_loader PRIVATE main.c)
+target_link_libraries(shizuku_boot_loader PRIVATE pico_stdlib)
