@@ -1,4 +1,3 @@
 set(SHIZUKU_PLATFORM_NAME unknown CACHE STRING shizuku_platform_name)
-set(SHIZUKU_SYSTEM_PROCESSOR CACHE STRING shizuku_system_processor_name)
+set(SHIZUKU_SYSTEM_PROCESSOR unknown CACHE STRING shizuku_system_processor_name)
 include(defalt.cmake)
-add_subdirectory(shizuku_config)

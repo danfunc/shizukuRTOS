@@ -8,11 +8,14 @@ namespace shizuku_RTOS
         template <typename T>
         concept cpu_manager_concept =  requires (T real){
         real.context_switch();
+        real.init();
+        real.add_thread();
         };
         template <typename T>
         concept kernel_concept = requires(T real){
-            cpu_manager_concept<typename T::cpu_manager>;
+            real.init();
         };
+
     } // namespace concepts
 } // namespace shizuku_RTOS
 

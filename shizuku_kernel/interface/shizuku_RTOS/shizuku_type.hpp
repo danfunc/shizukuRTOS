@@ -4,15 +4,18 @@
 namespace shizuku_RTOS
 {
     namespace type{
+        
         template <concepts::cpu_manager_concept T>
         class kernel
         {
         private:
         public:
             T cpu_manager = T();
+            void init() {cpu_manager.init();};
             kernel(){};
             ~kernel(){};
         };
+
     }
 } // namespace shizuku_RTOS
 

@@ -10,7 +10,8 @@ namespace shizuku_RTOS{
             public:
                 RP2040();
                 ~RP2040();
-                context_switch();
+                void context_switch();
+                void init();
             };
             
             RP2040::RP2040(/* args */)
@@ -20,8 +21,10 @@ namespace shizuku_RTOS{
             RP2040::~RP2040()
             {
             }
-            RP2040::context_switch(){
+            void RP2040::context_switch(){
 
+            }
+            void RP2040::init(){
             }
             
         }
