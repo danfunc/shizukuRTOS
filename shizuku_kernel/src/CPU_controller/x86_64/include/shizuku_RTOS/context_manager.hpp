@@ -1,13 +1,14 @@
 #ifndef CONTEXT_MANAGER_X86_64
 #define CONTEXT_MANAGER_X86_64
 namespace shizuku_RTOS {
-  namespace type{
+  namespace types{
     namespace thread{
       typedef struct thread
       {
         unsigned int time_remaining;
         void *stack_pointer;
-      }thread;
+      }
+      thread;
     }
     namespace cpu_manager{
     class x86_64
@@ -21,7 +22,6 @@ namespace shizuku_RTOS {
       void add_thread(){};
     };
     }
-  }
- // namespace x86_64
+  }// namespace x86_64
 } // namespace shizuku_RTOS
 #endif

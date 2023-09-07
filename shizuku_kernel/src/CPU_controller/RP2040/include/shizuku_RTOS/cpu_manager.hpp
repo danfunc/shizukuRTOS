@@ -12,6 +12,7 @@ namespace shizuku_RTOS{
                 ~RP2040();
                 void context_switch();
                 void init();
+                void add_thread(){};
             };
             
             RP2040::RP2040(/* args */)
@@ -30,4 +31,5 @@ namespace shizuku_RTOS{
         }
     }
 }
+
 #endif

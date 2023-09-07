@@ -16,4 +16,3 @@ void shizuku_kernel_boot(){
     kernel.init();
     return;
 }
-

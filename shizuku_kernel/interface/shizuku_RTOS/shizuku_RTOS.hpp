@@ -5,8 +5,6 @@
 #include "shizuku_RTOS/shizuku_type.hpp"
 #include "shizuku_RTOS/cpu_manager.hpp"
 #include "shizuku_RTOS/config.hpp"
-namespace shizuku_RTOS {
-    //template <concepts::kernel_concept T> using kernel = T;
-    using kernel = type::kernel<cpu_manager>;
-};
+#include "get_set.hpp"
+
 #endif
