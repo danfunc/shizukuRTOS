@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.26)
 project(shizuku_kernel CXX)
-add_library(shizuku_kernel STATIC)
+add_library(shizuku_kernel OBJECT)
 add_subdirectory(src)
 add_subdirectory(lib)
 add_subdirectory(config)

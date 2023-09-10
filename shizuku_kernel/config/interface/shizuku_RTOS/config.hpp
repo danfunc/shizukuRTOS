@@ -5,10 +5,9 @@
 #include "shizuku_RTOS/shizuku_type.hpp"
 #include "shizuku_RTOS/cpu_manager.hpp"
 namespace shizuku_RTOS {
-    using shizuku_system_processor = types::cpu_manager::SHIZUKU_SYSTEM_PROCESSOR;
-    using cpu_manager = shizuku_system_processor;
+    using cpu_manager = types::cpu_manager::SHIZUKU_SYSTEM_PROCESSOR;
 };
 namespace shizuku_RTOS {
-    using kernel = types::shizuku_kernel<types::kernel<cpu_manager>>;
+    using kernel = types::kernel<cpu_manager>;
 };
 #endif

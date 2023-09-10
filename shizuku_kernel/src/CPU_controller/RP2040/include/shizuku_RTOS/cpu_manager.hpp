@@ -1,7 +1,7 @@
 #ifndef CPU_MANAGER_HPP
 #define CPU_MANAGER_HPP
 namespace shizuku_RTOS{
-    namespace type{
+    namespace types{
         namespace cpu_manager{
             class RP2040
             {

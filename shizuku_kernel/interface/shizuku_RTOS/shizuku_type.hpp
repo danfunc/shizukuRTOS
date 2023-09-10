@@ -6,41 +6,25 @@ namespace shizuku_RTOS
 {
     namespace types{
         
-        template <concepts::cpu_manager_concept T>
+        template <concepts::cpu_manager_concept CPU_MANAGER>
         class kernel
         {
         private:
+        static CPU_MANAGER cpu_manager;
         public:
-            T cpu_manager = T();
-            void init() {cpu_manager.init();};
-            kernel(){};
+            static void init(){
+                cpu_manager.init();
+
+            };
+            kernel(){
+            };
             ~kernel(){};
         };
+        template <concepts::cpu_manager_concept CPU_MANAGER>
+        CPU_MANAGER kernel<CPU_MANAGER>::cpu_manager = CPU_MANAGER();
         namespace cpu_manager{
 
         }
-        template <concepts::kernel_concept T>
-        class shizuku_kernel
-        {
-        private:
-            /* data */
-        public:
-        void init();
-            shizuku_kernel(/* args */);
-            ~shizuku_kernel();
-        };
-        template <concepts::kernel_concept T>
-        shizuku_kernel<T>::shizuku_kernel()
-        {
-        };
-        template <concepts::kernel_concept T>
-        shizuku_kernel<T>::~shizuku_kernel()
-        {
-        };
-        template <concepts::kernel_concept T>
-        void shizuku_kernel<T>::init(){
-        };
     }
 } // namespace shizuku_RTOS
-
 #endif

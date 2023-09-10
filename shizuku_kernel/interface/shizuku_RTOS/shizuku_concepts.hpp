@@ -5,15 +5,20 @@ namespace shizuku_RTOS
 {
     namespace concepts
     {
-        template <typename T>
-        concept cpu_manager_concept =  requires (T real){
+        template <typename object>
+        concept object_concept = requires (object real){
+            same_type<decltype(real.name),char*>;
+        };
+        template <typename cpu_manager>
+        concept cpu_manager_concept =  requires (cpu_manager real){
         real.context_switch();
         real.init();
         real.add_thread();
+        cpu_manager();
         };
-        template <typename T>
-        concept kernel_concept = requires(T real){
-            real.init();
+        template <typename kernel>
+        concept kernel_concept = requires{
+            kernel::init();
         };
 
     } // namespace concepts

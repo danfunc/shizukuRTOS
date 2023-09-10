@@ -1,5 +1,5 @@
 target_sources(shizuku_boot_loader PRIVATE EfiMain.c)
-target_include_directories(shizuku_boot_loader PRIVATE include/UEFI)
+target_include_directories(shizuku_boot_loader PRIVATE include/UEFI include/UEFI/X64)
 target_link_libraries(shizuku_boot_loader shizuku_kernel)
 target_link_options(shizuku_boot_loader PRIVATE -Wl,-entry:EfiMain)
 include(${SHIZUKU_SYSTEM_PROCESSOR}.cmake)

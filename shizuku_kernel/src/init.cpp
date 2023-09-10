@@ -10,9 +10,17 @@ namespace shizuku_RTOS
     
 } // namespace shizuku_RTOS
 
-shizuku_RTOS::kernel kernel = shizuku_RTOS::kernel();
 
 void shizuku_kernel_boot(){
-    kernel.init();
+    shizuku_RTOS::kernel::init();
     return;
 }
+struct Object
+{
+    
+    unsigned int id;
+    const char *name;
+    Object(char *name):name(name){}
+    };
+
+static_assert(shizuku_RTOS::concepts::object_concept<Object>);
