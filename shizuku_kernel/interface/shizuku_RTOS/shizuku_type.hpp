@@ -14,8 +14,8 @@ namespace shizuku_RTOS
         public:
             static void init(){
                 cpu_manager.init();
-
             };
+            static void add_thread(){};
             kernel(){
             };
             ~kernel(){};
