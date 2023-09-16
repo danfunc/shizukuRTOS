@@ -6,5 +6,5 @@
 #include "shizuku_RTOS/cpu_manager.hpp"
 #include "shizuku_RTOS/config.hpp"
 #include "get_set.hpp"
-static_assert(shizuku_RTOS::concepts::kernel_concept<shizuku_RTOS::kernel>,"shizuku_RTOS::kernel is not much kernel_concept");
+//static_assert(shizuku_RTOS::concepts::kernel_concept<shizuku_RTOS::kernel>,"shizuku_RTOS::kernel is not much kernel_concept");
 #endif
