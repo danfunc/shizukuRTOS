@@ -1,30 +1,36 @@
 #ifndef SHIZUKU_TYPE_HPP
 #define SHIZUKU_TYPE_HPP
-#include "shizuku_RTOS/shizuku_concepts.hpp"
 #include "shizuku_RTOS/cpu_manager.hpp"
-namespace shizuku_RTOS
-{
-    namespace types{
-        
-        template <concepts::cpu_manager_concept CPU_MANAGER>
-        class kernel
-        {
-        private:
-        static CPU_MANAGER cpu_manager;
-        public:
-            static void init(){
-                cpu_manager.init();
-            };
-            static void add_thread(){};
-            kernel(){
-            };
-            ~kernel(){};
-        };
-        template <concepts::cpu_manager_concept CPU_MANAGER>
-        CPU_MANAGER kernel<CPU_MANAGER>::cpu_manager = CPU_MANAGER();
-        namespace cpu_manager{
+#include "shizuku_RTOS/shizuku_concepts.hpp"
+#include "stdint.h"
+namespace shizuku_RTOS {
+namespace types {
 
-        }
-    }
+template <typename CPU_MANAGER> class kernel {
+private:
+  static CPU_MANAGER cpu_manager;
+  typedef struct Object {
+    uint32_t crc32_id, crc32_salted_id;
+
+  } Object;
+
+public:
+  static void init() { cpu_manager.init(); };
+  static void create_Object(uint32_t crc32_id, uint32_t crc32_salted_id){};
+  static inline void add_thread(uint32_t crc32_id, uint32_t crc32_salted_id,
+                                void (*entry_point)(int argc, char *argv[])) {
+    cpu_manager.add_thread(crc32_id, crc32_salted_id, entry_point);
+  };
+  kernel(){};
+  ~kernel(){};
+};
+template <typename CPU_MANAGER>
+CPU_MANAGER kernel<CPU_MANAGER>::cpu_manager = CPU_MANAGER();
+struct Object {
+  uint32_t crc32_id;
+  uint32_t crc32_salted_id;
+} typedef Object;
+
+} // namespace types
 } // namespace shizuku_RTOS
 #endif
