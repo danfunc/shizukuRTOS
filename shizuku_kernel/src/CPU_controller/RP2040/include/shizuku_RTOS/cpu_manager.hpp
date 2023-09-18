@@ -24,7 +24,6 @@ public:
   void init();
   int add_thread(uint32_t crc32_id, uint32_t crc32_salted_id,
                  void (*entry_point)(int argc, char *argv[])) {
-
     return 0;
   };
 };

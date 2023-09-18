@@ -1,0 +1,2 @@
+target_include_directories(shizuku_kernel PUBLIC interface)
+target_sources(shizuku_kernel PRIVATE memcontrl.cpp)

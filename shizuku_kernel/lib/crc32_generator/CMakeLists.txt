@@ -1,0 +1,4 @@
+add_library(crc32_generator)
+target_sources(crc32_generator PRIVATE crc32.cpp)
+target_include_directories(crc32_generator PUBLIC interface)
+target_link_libraries(shizuku_kernel PRIVATE crc32_generator)
