@@ -1,2 +1,2 @@
 target_include_directories(shizuku_kernel PUBLIC include)
-target_sources(shizuku_kernel PRIVATE add_thread.cpp init.cpp)
+target_sources(shizuku_kernel PRIVATE add_thread.cpp init.cpp context_switch.cpp)

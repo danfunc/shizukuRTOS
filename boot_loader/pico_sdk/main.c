@@ -1,6 +1,6 @@
 
 #include <stdio.h>
-#include "pico/stdlib.h"
+#include "stdlib.h"
 
 int main(){
     return 0;

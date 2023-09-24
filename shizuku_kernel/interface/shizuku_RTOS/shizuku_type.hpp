@@ -22,11 +22,12 @@ public:
   };
   static void create_Object(uint32_t crc32_id, uint32_t crc32_salted_id){};
   static inline void create_Object(char *name, const unsigned int size) {
-    char salted[size * 2];
-    for (int i = 0; i < size; i++) {
+    char salted[size + 1];
+    for (unsigned int i = 0; i < size; i++) {
+      salted = name[i];
     }
-
-    create_Object(::crc32(name, size), crc32(name, size));
+    salted[size] = '1';
+    create_Object(::crc32(name, size), crc32(salted, (size + 1)));
   }
   static inline void add_thread(uint32_t crc32_id, uint32_t crc32_salted_id,
                                 void (*entry_point)(int argc, char *argv[])) {

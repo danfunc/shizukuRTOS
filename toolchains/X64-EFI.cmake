@@ -10,6 +10,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -mno-red-zone -fno-stack-protector -fshort-wchar -O3 -nostdlib -fno-exceptions -fno-rtti -target x86_64-windows-msvc -Wno-microsoft-static-assert -ffreestanding")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -mno-red-zone -fno-stack-protector -fshort-wchar -O3 -nostdlib -fno-exceptions --static -fno-rtti -target x86_64-windows-msvc -Wno-microsoft-static-assert -ffreestanding -std=c++20")
 set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,-subsystem:efi_application -ffreestanding -fno-exceptions  -nostdlib -fuse-ld=lld")
+add_compile_options(-fshort-wchar)
 
 set(SHIZUKU_PLATFORM_NAME UEFI CACHE STRING shizuku_platform_name FORCE)
 set(SHIZUKU_SYSTEM_PROCESSOR x86_64 CACHE STRING shizuku_system_processor_name FORCE)

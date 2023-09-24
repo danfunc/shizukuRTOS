@@ -1,4 +1,5 @@
 add_executable(shizuku_boot_loader)
+target_link_libraries(shizuku_boot_loader PRIVATE shizuku_kernel)
 add_subdirectory(${SHIZUKU_PLATFORM_NAME})
 if(${SHIZUKU_PLATFORM_NAME} STREQUAL pico_sdk)
 pico_add_extra_outputs(shizuku_boot_loader)

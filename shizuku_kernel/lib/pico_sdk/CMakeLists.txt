@@ -1,0 +1,1 @@
+target_link_libraries(shizuku_kernel PRIVATE pico_stdlib)
