@@ -8,8 +8,7 @@ namespace cpu_manager {
 class RP2040 {
   
 
-private:
-  struct thread_tree {};
+
 
 public:
 typedef struct context {
@@ -27,9 +26,13 @@ typedef struct context {
   int load_context(const context &context);
   int save_context(context &context,int return_value);
   int add_thread(uint32_t crc32_id, uint32_t crc32_salted_id,
-                 void (*entry_point)(int argc, char *argv[]),int argc,char*argv[]) {
-    return 0;
-  };
+                 void (*entry_point)(int argc, char *argv[]),int argc,char*argv[]);
+  typedef struct thread_list {
+  thread_list *next,*before;
+  thread current_thread;
+}thread_list;
+private:
+thread_list *first_point;
 };
 } // namespace cpu_manager
 } // namespace types
