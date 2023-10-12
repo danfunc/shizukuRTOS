@@ -1,0 +1,4 @@
+#ifndef MEMORY_MANAGER_PICO_SDK
+#define MEMORY_MANAGER_PICO_SDK
+
+#endif

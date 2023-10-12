@@ -1,6 +1,6 @@
 #ifndef SHIZUKU_CONFIG_HPP
 #define SHIZUKU_CONFIG_HPP
-#include "shizuku_RTOS/cpu_manager.hpp"
+#include "shizuku_RTOS/cpu_managers.hpp"
 #include "shizuku_RTOS/memory_controller.hpp"
 #include "shizuku_RTOS/shizuku_concepts.hpp"
 #include "shizuku_RTOS/shizuku_interface.hpp"
@@ -12,5 +12,6 @@ using cpu_manager = types::cpu_manager::SHIZUKU_SYSTEM_PROCESSOR;
 }; // namespace shizuku_RTOS
 namespace shizuku_RTOS {
 using kernel = types::kernel<cpu_manager>;
+using Object = types::kernel<cpu_manager>::Object;
 };
 #endif

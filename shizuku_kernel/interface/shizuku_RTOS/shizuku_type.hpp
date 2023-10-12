@@ -1,21 +1,24 @@
 #ifndef SHIZUKU_TYPE_HPP
 #define SHIZUKU_TYPE_HPP
 #include "crc32.hpp"
-#include "shizuku_RTOS/cpu_manager.hpp"
+#include "shizuku_RTOS/cpu_managers.hpp"
 #include "shizuku_RTOS/shizuku_concepts.hpp"
 #include "stdint.h"
 namespace shizuku_RTOS {
 namespace types {
+  template <typename CPU_MANAGER> struct Object{
+    using thread = CPU_MANAGER::thread;
+    thread threads;
+  };
 
 template <typename CPU_MANAGER> class kernel {
 private:
   static CPU_MANAGER cpu_manager;
-  typedef struct Object {
-    uint32_t crc32_id, crc32_salted_id;
-
-  } Object;
 
 public:
+  using Object = struct Object { 
+    
+    uint32_t crc32_id, crc32_salted_id; };
   static void init() {
     ::make_crc32_table();
     cpu_manager.init();
@@ -38,10 +41,7 @@ public:
 };
 template <typename CPU_MANAGER>
 CPU_MANAGER kernel<CPU_MANAGER>::cpu_manager = CPU_MANAGER();
-struct Object {
-  uint32_t crc32_id;
-  uint32_t crc32_salted_id;
-} typedef Object;
+
 
 } // namespace types
 } // namespace shizuku_RTOS

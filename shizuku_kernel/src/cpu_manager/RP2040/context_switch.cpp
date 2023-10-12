@@ -1,5 +1,5 @@
-#include "shizuku_RTOS/cpu_manager.hpp"
 
+#include "shizuku_RTOS/shizuku_RTOS.hpp"
 
 int shizuku_RTOS::types::cpu_manager::RP2040::save_context(context &context,int return_value){
   if (return_value == 0) {
@@ -31,6 +31,17 @@ int shizuku_RTOS::types::cpu_manager::RP2040::save_context(context &context,int 
   asm("mov %0, lr" : "=r"(lr));
   context.lr = lr;
   return 0;
+}
+
+void shizuku_RTOS::types::cpu_manager::RP2040::context_switch(context &current_context, context &next_context){
+  if (!save_context(current_context,1)){
+    load_context(next_context);
+  }
+  return;
+};
+
+void shizuku_RTOS::types::cpu_manager::RP2040::context_switch(){
+  return;
 }
 
 int shizuku_RTOS::types::cpu_manager::RP2040::load_context(const context &context){
