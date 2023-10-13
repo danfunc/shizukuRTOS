@@ -4,7 +4,7 @@
 
 namespace shizuku_RTOS {
 namespace types {
-namespace cpu_manager {
+namespace cpu_managers {
 class RP2040 {
 public:
   using context = struct {
@@ -18,17 +18,9 @@ public:
   RP2040();
   ~RP2040();
   void context_switch(context &current_context, context &next_context);
-  void context_switch();
   void init();
   int load_context(const context &context);
   int save_context(context &context, int return_value);
-  int add_thread(uint32_t crc32_id, uint32_t crc32_salted_id,
-                 void (*entry_point)(int argc, char *argv[]), int argc,
-                 char *argv[]);
-  using thread_list = struct thread_list {
-    thread_list *next, *before;
-    thread current_thread;
-  };
 };
 } // namespace cpu_manager
 } // namespace types

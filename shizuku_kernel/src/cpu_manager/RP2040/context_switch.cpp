@@ -1,7 +1,7 @@
 
 #include "shizuku_RTOS/shizuku_RTOS.hpp"
 
-int shizuku_RTOS::types::cpu_manager::RP2040::save_context(context &context,int return_value){
+int shizuku_RTOS::types::cpu_managers::RP2040::save_context(context &context,int return_value){
   if (return_value == 0) {
     return_value = 1;
   }
@@ -33,18 +33,15 @@ int shizuku_RTOS::types::cpu_manager::RP2040::save_context(context &context,int 
   return 0;
 }
 
-void shizuku_RTOS::types::cpu_manager::RP2040::context_switch(context &current_context, context &next_context){
+void shizuku_RTOS::types::cpu_managers::RP2040::context_switch(context &current_context, context &next_context){
   if (!save_context(current_context,1)){
     load_context(next_context);
   }
   return;
 };
 
-void shizuku_RTOS::types::cpu_manager::RP2040::context_switch(){
-  return;
-}
 
-int shizuku_RTOS::types::cpu_manager::RP2040::load_context(const context &context){
+int shizuku_RTOS::types::cpu_managers::RP2040::load_context(const context &context){
     void *sp, *lr;
   uint32_t r4, r5, r6, r7, r8, r9, r10, r11, r12;
   r4 = context.r4;

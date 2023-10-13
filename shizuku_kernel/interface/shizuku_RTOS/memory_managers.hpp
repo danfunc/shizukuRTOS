@@ -1,4 +1,4 @@
 #ifndef SHIZUKU_RTOS_MEMORY_MANAGERS_HPP
 #define SHIZUKU_RTOS_MEMORY_MANAGERS_HPP
-#include "shizuku_RTOS/memory_managers/pico-sdk.hpp"
+#include "shizuku_RTOS/memory_managers/pico_sdk.hpp"
 #endif
